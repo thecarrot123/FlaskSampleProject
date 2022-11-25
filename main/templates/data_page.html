@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% block title %}
+Data
+{% endblock %}
+{% block content %}
+<div class="w-50 mx-auto mt-5">
+    <form class="form-inline" method="POST">
+        {{ submitForm.hidden_tag() }}
+        {{ submitForm.data(class="form-control w-75 mr-auto", placeholder="Enter new data") }}
+        {{ submitForm.submit(class="btn btn-primary") }}
+        {{ clearForm.clear(class="btn btn-secondary ml-1") }}
+    </form>
+    <table class="table table-hover table-dark text-center mt-2">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+            <tr>
+                <td class="mr-3"> {{item.id}} </td>
+                <td class="mr-3"> {{item.data}} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+    {% endblock %}
