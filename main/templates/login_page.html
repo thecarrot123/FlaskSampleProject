@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block title %}
+login
+{% endblock %}
+{% block content %}
+<div class="container">
+    <form class="form-register" method="POST" style="color:white">
+        <h1 class="h2 mt-5 mb-3 text-center">login</h1>
+        {{ loginForm.hidden_tag() }}
+        {{ loginForm.username.label() }}
+        {{ loginForm.username(class="form-control mb-2") }}
+        {{ loginForm.password.label() }}
+        {{ loginForm.password(class="form-control mb-3") }}
+        <div class="text-center">
+            {{ loginForm.login(class="btn btn-primary") }}
+        </div>
+    </form>
+</div>
+
+{% endblock %}

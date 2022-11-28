@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}
+register
+{% endblock %}
+{% block content %}
+<div class="container center">
+    <form class="form-register" method="POST" style="color:white">
+        <h1 class="h2 mt-5 mb-3 text-center">Create new account</h1>
+        {{ registerForm.hidden_tag() }}
+        {{ registerForm.username.label() }}
+        {{ registerForm.username(class="form-control mb-2", placeholder="shadow walker") }}
+        {{ registerForm.email.label() }}
+        {{ registerForm.email(class="form-control mb-2", placeholder="w.shadow@gmail.com") }}
+        {{ registerForm.password1.label() }}
+        {{ registerForm.password1(class="form-control mb-2") }}
+        {{ registerForm.password2.label() }}
+        {{ registerForm.password2(class="form-control mb-3") }}
+        <div class="text-center">
+            {{ registerForm.register(class="btn btn-primary mb-2") }}
+        </div>
+    </form>
+</div>
+{% endblock %}
