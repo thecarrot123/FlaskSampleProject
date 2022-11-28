@@ -1,9 +1,8 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
-from wtforms.validators import Length
 
 class DataSubmitForm(FlaskForm):
-    data = StringField(label='Add data', validators=[Length(min=1)])
+    data = StringField(label='Add data')
     submit = SubmitField(label='Submit')
 
 class DataClearForm(FlaskForm):
